@@ -1,0 +1,16 @@
+ls -rtlh 
+
+#liste les services 
+systemctl list-unit-files -t service | grep enabled
+
+#Set system default as multi-user
+sudo systemctl  set-default multi-user
+
+#Set system default as multi-user (without systemctl)
+ln -s /lib/systemd/system/multi-user.target /etc/systemd/system/default.target
+
+#Selectionne les paquets a installer par defaut
+tasksel
+
+# edit group/passwd/shadow file
+sudo vipw 
