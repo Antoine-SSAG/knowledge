@@ -1,0 +1,82 @@
+IAM - Identity Access Management
+  Consists of :
+	-Users
+	-Groups
+	-Roles
+	-Policies
+
+Is used to manage rights and permissions in AWS.
+IAM is universal, it does not apply to a specific region.
+Default permissions are set to deny (least privilege)
+
+S3 - Simple storage service 
+  Object based, saved in the form of :
+	-File Name (Key)
+	-File in itself encoded (Value)
+	-Version number (Version ID)
+	-Metadate
+	-Subressources:
+	  - ACL
+	  -Torrent
+
+Max file size is 5TB
+File are stored in bucket (folder), each but must have a unique name due to DNS
+Return 200 when upload succeed 
+All buckets are private by default
+
+Consistency model:
+For PUTS of new objects : Read after write 
+For onverwrite PUTS and DELETES : Eventual Consistency (due to time of propagation)
+
+Differents S3 storage classes(Important) :
+	-S3 standard 
+	-S3 - IA : Data accessed less frequently (charged for data retrieval)
+	-S3 One Zone - IA : Only stored in one availablity zone and accessed less frequently 
+	-S3 Intelligent Tiering : automaticly move data across diferent storage type based on usage 
+	-S3 Glacier : Equivalent to band storage, cost less for storage but slow to get back 
+	-S3 Glacier Deep Archive : Cheapest tier for storage but really slow to get back ~= 12h
+
+Types of encryption : 
+  -Encryption in transit :
+    -SSL/TLS
+
+  -Encryption at rest :
+    -Server side encryption 
+	-3 ways to encrypt: 
+	  -S3 Management Keys - SSE-S3
+	  -AWS KMS,Managed Keys - SSE-KMS
+	  -Server side Encryption with customer provided Keys - SSE-C
+
+Cross Region Replication:
+  -Versionning must be enabled to use CRR.
+  -Can't replicate to the same region 
+  -Files in existing bucket are not automaticly replicated 
+  -Files are automaticly replicated startingStwhen CRR is activated
+  -Delete markers and individual versions deletion are not replicated 
+
+Lifecycle Plocies:
+  -Automation of objects in different storage tier.
+  -Can be used in conjunction with versionning 
+  -Can be applied to all version of objects 
+
+S3 transfer acceleration:
+  -Use CloudFront
+
+Cloudfront:
+  -Permit to cache content of content (S3 bucket,EC2 instance or ELB) to Edge location (cache proxy)
+  -A distribution is a collection of Edge location 
+  -2 types of Distribution:
+    -Web distribution : Used for website 
+    -RTMP : Used for media streaming
+
+Snowball is a disk used to move big amount of data to AWS or from it.
+
+Storage gateway: 
+  -File Gateway : Files files directly stored on S3
+  -Volume Gateway:
+	-Stored Volumes : Data stored on site and asynchronously backed to S3
+	-Cached Volume : Data is entirely stored on AWS and only the most used part is cached on site
+  -Gateway Virtual Tape Library :
+	-Used as tape compatible with most popular backups apps (NetBackup,Veeam etc...)
+
+READ THE FAQ BEAFORE THE EXAM

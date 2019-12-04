@@ -1,0 +1,12 @@
+- Route 53
+  - ELB (Elastic Load Balancer) do not have ipv4 you resolve them using DNS name 
+  - Always prefer an alias record over a CNAME 
+  - Routing policies :
+	-Simple Routing : One record with multiple value returned on random order
+	-Weighted Routing : Add weight to records 
+	-Latency-based Routing : Based on latency check 
+	-Failover Routing : Check for health status and failover if NOK
+	-Geolocation Routing : Send user based on their Geolocation 
+	-Geoproximity Routing (Traffic flow only) : Route traffic to ressource based on geolocation
+	-Multivalue Answer Routing : Same as simple routing but with healthcheck 
+

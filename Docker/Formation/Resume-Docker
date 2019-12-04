@@ -1,0 +1,20 @@
+-Docker cheat sheets:
+
+-Listing containers:
+  - docker ps (running containers)
+  - docker ps -a (all created containers)
+
+- Starting a container (with creation)
+  - docker run $(container)
+  - docker create $(container) + docker start $(container id)
+
+- Stopping a container 
+  - docker stop $(container)
+
+
+-Get logs : 
+  - docker logs $(container id)
+
+-Remove all data from docker:
+ - docker system prune -a 
+

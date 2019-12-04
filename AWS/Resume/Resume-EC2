@@ -1,0 +1,24 @@
+-EC2 (Amazon Elastic Compute Cloud)
+  -Princing model 
+	-On demand (No long term commitment)
+	-Reserved (Reservation, cheaper the more you reserve, contract between 1 and 3 years) 
+	-Spot (Bid price on compute, used for flexible start and ends compute)
+	  -If instance is terminated by AWS then you're not charged )
+	-Dedicated Hosts (Physical server dedicated fo you (for license or regulation))
+  -EBS (Elastic Block store)
+	-Additionnal volume are not deleted when you terminate the EC2 instance 
+  	-Types:
+	  -General Purpose SSD
+	  -Provisioned IOPS SSD --> High perf SSD
+	  -Throughput Optimzed HDD
+	  -Cold HDD --> Lowest cost available 
+	  -EBS Magnetic
+	-To migrate an EC2 instance, you have to create a snaphsot of it, use it as an AMI and lauch the AMI in the new AZ 
+  -EFS (Elastic File System)
+	-Based on NFSv4
+	-Read after write consistency 
+  -Placement group (Name must be unique in AWS account)
+	-Clustured Placement group -> Low latency/High Network Throughput (can't span multiple AZ)
+	-Spread placemnt group  -> Individual Critical EC2 instances (Only 7 running instance per AZ)
+	-Partitionned  -> Multiples EC2 instances (HDSFS,HBase and Cassandra cluster)
+	-Can't move an existing instance into a placement group

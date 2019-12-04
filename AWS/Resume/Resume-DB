@@ -1,0 +1,29 @@
+-Databases on AWS 
+  -RDS(Online transaction processing)
+    -Maximum 35 days for backups
+	-MySQL
+	-PostgreSQL
+	-Oracle
+	-Aurora (made by amazon)
+	  -Always have 6 copies of your data
+	  -Can share snapshot with other AWS account
+	-MariaDB
+	-DynamoDB(NoSQL/Serverless)
+	  -Stored on SSD
+	  -Spread across geographically distinct data centers
+	  -2 types of consistency:
+		-Envetual Consistent read (if take more than 1 seconds to read after write)
+		-Strongly Consistent read (if take less tah n1 second to read after write)
+
+  -Redshift (Online Analytics processing)
+	-Try to always maintains 3 copies of your data 
+	-Can replicate data to another S3 region for DR (Disaster Recovery)
+  -2 types of backups :
+	-Automatic backups
+	-Database Snapshots
+
+-Elasticache (Caching before db access), increase database and web app performance
+  -Memcached(Simple)
+	-Use to scale horizontally
+  -Redis(Advanced datatypes/multiple AZ or backups)
+
