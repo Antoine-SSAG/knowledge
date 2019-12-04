@@ -1,0 +1,33 @@
+#Get Powershell version : 
+$PSVersionTable
+
+#Wget like :
+Invoke-WebRequest
+
+#Number of file in directory MyFolder :
+Write-Host (dir c:\MyFolder | measure).Count;
+
+#Get Domain Short name :
+$domainName = ((gwmi Win32_ComputerSystem).Domain).Split(".")[0]
+
+#Recursive file searching : 
+Get-ChildItem -Path C:\Users\century7\Desktop -Filter readme -Recurse -ErrorAction SilentlyContinue -Force
+
+#Number of unique line in file  : 
+$A = $(foreach ($line in Get-Content C:\Users\century8\Desktop\umique.txt) {$line.tolower().split(" ")}) | sort | Get-Unique
+$A.count
+
+#Print line number X of file.txt : 
+Get-Content file.txt | Select -Index (line - X)
+
+#Show hidden file : 
+Get-ChildItem –Attributes H
+
+#Count number of word :
+Get-Content .\countmywords | Measure-Object -Word
+
+#Get AD User with name Rogers :
+Get-ADUser -Filter 'Name -like "*Rogers*"'
+
+#Get number of people in AD group :
+Get-ADGroupMember -Identity cyborg | Measure-Object
