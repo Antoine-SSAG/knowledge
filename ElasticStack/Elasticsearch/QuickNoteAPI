@@ -1,0 +1,44 @@
+#Create the auditbeat indice and allow only one shard to it
+PUT auditbeat
+{
+  "settings" : {
+      "index" : {
+          "number_of_shards" : 1 
+      }
+  }
+}
+
+#Delete the auditbeat indice
+DELETE auditbeat
+
+#Get all the indices starting with auditbeat
+GET _cat/indices/auditbeat*
+
+#Get all the current tasks on the Elasticsearch cluster
+GET /_tasks
+
+
+#Reindex all indices starting with auditbeat to an auditbeat indice
+POST _reindex
+{
+    "conflicts": "proceed",
+    "source": {
+        "index": "auditbeat*"
+    },
+    "dest": {
+        "index": "auditbeat",
+        "op_type": "create"
+    }
+}
+
+#Reindex all indices starting with auditb to an auditbq indice and put a throttle on the requests
+POST _reindex?requests_per_second=5000
+{
+  "source": {
+    "index": "auditb*"
+  },
+  "dest": {
+    "index": "auditbq",
+    "op_type": "create"
+  }
+}

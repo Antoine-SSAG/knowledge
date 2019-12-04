@@ -1,8 +1,0 @@
--Volume Gateway (Certifified Solution Architect lesson 21)
-	-Stored volume
-	-Cached Volume 
-	-Gateway tape Libreary
--EBS (Certified Solution Architect lesson 27,28,29,40)
-	-EBS in general 
-	-Encryption in EBS
-	-Clonning EBS disk (snapshot->IAM->Image)
