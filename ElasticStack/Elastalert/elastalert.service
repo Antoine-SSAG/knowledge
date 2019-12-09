@@ -1,0 +1,12 @@
+[Unit]
+Description=Elastalert
+After=elasticsearch.service
+
+[Service]
+Type=simple
+User=elasticsearch
+WorkingDirectory=/etc/elastalert
+ExecStart=/usr/local/bin/elastalert --verbose --config /etc/elastalert/config.yaml
+
+[Install]
+WantedBy=multi-user.target
