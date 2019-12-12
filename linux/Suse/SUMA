@@ -1,0 +1,6 @@
+# Update repo
+# After adding files to the repo path :
+create repo . 
+
+# After updating repo files :
+spacewalk-repo-sync -c repo
