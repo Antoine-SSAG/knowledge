@@ -14,7 +14,7 @@ setup.ilm.policy_name: "auditbeat-%{[agent.version]}"
 
 Warning : Le nom donné sur la partie ILM (setup.ilm.rollover_alias) va prendre le dessus sur le nom de l'index configuré dans l'output 
 
-Pour l'ILM, il est possible d'utiliser la GUI de Kibana 
+Pour l'ILM, il est possible d'utiliser la GUI de Kibana (le taille totale est seulement le total de la taille des shards primaires)
 
 La partie template n'est pas disponible dans la GUI à version du 7.3.2 il faut donc la faire en API : 
 
