@@ -1,0 +1,40 @@
+name: Rule Name
+type: frequency
+index: "*index*"
+num_events: 6
+timeframe:
+  minutes: 5
+filter:
+  - query:
+        query_string:
+                query: "Query to filter"
+query_key: fieldtowatch
+
+alert:
+ - "email"
+
+
+# a list of email addresses to send alerts to
+email:
+ - "user@email.com"
+
+alert_subject_args:
+  - user
+
+alert_text_args:
+  - user
+  - "@timestamp"
+
+alert_subject: "Suject of mail"
+
+include: ["@timestamp","user"]
+
+alert_text_type: alert_text_only
+
+alert_text: "
+User: {0}
+"
+
+
+smtp_host: "server@email.com"
+from_addr: "elastalert@email.com"
