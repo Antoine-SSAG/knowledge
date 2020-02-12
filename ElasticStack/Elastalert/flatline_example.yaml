@@ -1,0 +1,34 @@
+# Regle permettant d envoyer une alerte quand l'application XXXXXXX n'envoie plus de logs.
+
+name: No Logs Received from XXXXXXX
+
+type: flatline
+
+index: index*
+
+threshold: 1
+
+timeframe:
+  minutes: 5
+
+query_key: "fieldtoquery"
+
+filter:
+- query:
+    query_string:
+      query: "tags : XXXXXXXX"
+
+realert:
+  minutes: 15
+
+
+##Configuration du mail
+
+alert_text: "Pas de Log de XXXXX"
+
+alert:
+ - "email"
+smtp_host: "smtp@mail.com"
+from_addr: "elastalert@mail.com"
+email:
+ - "user@mail.com"
