@@ -51,5 +51,9 @@
 ## Windows Logs 
 
 [Logon Types](http://techgenix.com/logon-types/)
+
 [Event 4624](https://docs.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4624#security-monitoring-recommendations)
+
 [Event 4634](https://docs.microsoft.com/fr-fr/windows/security/threat-protection/auditing/event-4634)
+
+[Global windows event list](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx)
