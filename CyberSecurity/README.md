@@ -48,4 +48,7 @@
 
 [Autmation scanning with arachni](https://joecmarshall.com/posts/automated-scanning-with-arachni/)
 
+## Windows Logs 
+
+[Logon Types](http://techgenix.com/logon-types/)
 
