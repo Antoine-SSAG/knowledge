@@ -22,6 +22,6 @@ FILES=/etc/elastalert/rules/rules_infra/*
 for f in $FILES
 do
     echo "fichier" $f ":"
-    echo ' - "pascal.beyer@mutuaide.fr"' >> $f
+    echo ' - "toto"' >> $f
     tail -3 $f
 done
