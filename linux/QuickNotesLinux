@@ -25,3 +25,9 @@ do
     echo ' - "toto"' >> $f
     tail -3 $f
 done
+
+# List all file ending in .xz and smaller than 64c and print the ls output of it.
+find . -name "*.xz" -type 'f' -size -64c -exec ls -lah {} \;
+
+# Delete all file ending in .xz and smaller than 64c 
+find . -name "*.xz" -type 'f' -size -64c -delete
